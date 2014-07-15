@@ -32,15 +32,7 @@ public class GrillApp implements EntryPoint {
 	private final IPersonServiceAsync personService = GWT
 			.create(IPersonService.class);
 
-	class MyColumn extends TextColumn<Person> {
-
-		@Override
-		public String getValue(Person object) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-	}
+	
 
 	/**
 	 * This is the entry point method.
@@ -128,4 +120,6 @@ public class GrillApp implements EntryPoint {
 	static String toJaNein(boolean value) {
 		return value ? "Ja" : "Nein";
 	}
+
 }
+

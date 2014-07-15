@@ -8,7 +8,7 @@ public class Person implements Serializable {
 	String name;
 	String adresse;
 	boolean anwesend; // false or true
-	boolean admin; // false
+	boolean admin; // false 
 	
 
 	// Important: there must be a zero-arg constructor and setters and getter for all attributes for the serialization to work!
