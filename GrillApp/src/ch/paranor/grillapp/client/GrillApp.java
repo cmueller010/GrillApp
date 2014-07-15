@@ -31,7 +31,7 @@ public class GrillApp implements EntryPoint {
 	 */
 	private final IPersonServiceAsync personService = GWT
 			.create(IPersonService.class);
-	
+
 	class MyColumn extends TextColumn<Person> {
 
 		@Override
@@ -39,7 +39,7 @@ public class GrillApp implements EntryPoint {
 			// TODO Auto-generated method stub
 			return null;
 		}
-		
+
 	}
 
 	/**
@@ -62,8 +62,7 @@ public class GrillApp implements EntryPoint {
 		// Add the column to the table and set a column title
 		table.addColumn(nameColumn, "Name");
 
-		
-		
+		// Adresse
 		TextColumn<Person> adresseColumn = new TextColumn<Person>() {
 
 			@Override
@@ -72,35 +71,61 @@ public class GrillApp implements EntryPoint {
 			}
 
 		};
-		
-		
+
 		table.addColumn(adresseColumn, "Adresse");
 
+//		 anwesend
+		TextColumn<Person> anwesendColumn = new TextColumn<Person>() {
+
+			@Override
+			public String getValue(Person p) {
+				return toJaNein(p.getAnwesend());
+			}
+		};
+
+		table.addColumn(anwesendColumn, "anwesend");
+
 		
-		
-		
+//		 Admin
+		 TextColumn<Person> adminColumn = new TextColumn<Person>() {
+
+		 @Override
+		 public String getValue(Person p) {
+		 return toJaNein(p.getAdmin());
+		 }
+
+		 };
+
+		 table.addColumn(adminColumn, "Admin");
+
 		// Add the table to the RootPanel
 		// Use RootPanel.get() to get the entire body element
 		// 'personTableContainer' is defined in GrillApp.html
-		RootPanel.get("personTableContainer").add(table);
 		
+		
+		RootPanel.get("personTableContainer").add(table);
+
 		personService.getPersons(new AsyncCallback<List<Person>>() {
 
 			@Override
 			public void onFailure(Throwable caught) {
-				//Notify the user that an error occurred
+				// Notify the user that an error occurred
 				Label error = new Label(SERVER_ERROR);
-				//'errorLabelContainer' is specified in GrillApp.html
-				RootPanel.get("errorLabelContainer").add(error);;
+				// 'errorLabelContainer' is specified in GrillApp.html
+				RootPanel.get("errorLabelContainer").add(error);
+				;
 			}
 
 			@Override
 			public void onSuccess(List<Person> result) {
-				//Add the persons to the table
+				// Add the persons to the table
 				table.setRowData(result);
-				
+
 			}
 		});
+	}
 
+	static String toJaNein(boolean value) {
+		return value ? "Ja" : "Nein";
 	}
 }
