@@ -31,6 +31,16 @@ public class GrillApp implements EntryPoint {
 	 */
 	private final IPersonServiceAsync personService = GWT
 			.create(IPersonService.class);
+	
+	class MyColumn extends TextColumn<Person> {
+
+		@Override
+		public String getValue(Person object) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
+	}
 
 	/**
 	 * This is the entry point method.
@@ -43,15 +53,32 @@ public class GrillApp implements EntryPoint {
 		TextColumn<Person> nameColumn = new TextColumn<Person>() {
 
 			@Override
-			public String getValue(Person object) {
-				// TODO: return the name of the person
-				return null;
+			public String getValue(Person p) {
+				return p.getName();
 			}
+
 		};
 
 		// Add the column to the table and set a column title
 		table.addColumn(nameColumn, "Name");
 
+		
+		
+		TextColumn<Person> adresseColumn = new TextColumn<Person>() {
+
+			@Override
+			public String getValue(Person p) {
+				return p.getAdresse();
+			}
+
+		};
+		
+		
+		table.addColumn(adresseColumn, "Adresse");
+
+		
+		
+		
 		// Add the table to the RootPanel
 		// Use RootPanel.get() to get the entire body element
 		// 'personTableContainer' is defined in GrillApp.html

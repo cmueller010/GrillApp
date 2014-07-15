@@ -9,8 +9,8 @@ import com.google.gwt.thirdparty.guava.common.collect.Lists;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
- * The server-side implementation of the Person RPC service.
- * Note: the service must be registered in web.xml
+ * The server-side implementation of the Person RPC service. Note: the service
+ * must be registered in web.xml
  */
 @SuppressWarnings("serial")
 public class PersonService extends RemoteServiceServlet implements
@@ -19,9 +19,14 @@ public class PersonService extends RemoteServiceServlet implements
 	@Override
 	public List<Person> getPersons() {
 		List<Person> persons = Lists.newArrayList();
-		
-		// TODO: add the persons you want to return. i.e. that you want to show in the table.
-		
+
+		Person neshi = new Person("Neshi", "Musterweg", true, true);
+		persons.add(neshi);
+
+		Person oliver = new Person("Oliver", "Hardeggerstrasse 12, 3008 Bern",
+				true, false);
+		persons.add(oliver);
+
 		return persons;
 	}
 
