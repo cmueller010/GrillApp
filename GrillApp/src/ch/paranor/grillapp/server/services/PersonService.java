@@ -23,8 +23,13 @@ public class PersonService extends RemoteServiceServlet implements
 		Person neshi = new Person("Neshi", "Musterweg", true, true);
 		persons.add(neshi);
 
-		Person oliver = new Person("Oliver", "Hardeggerstrasse 12, 3008 Bern", true, false);
+		Person oliver = new Person("Oliver", "Hardeggerstrasse 12, 3008 Bern",
+				true, false);
 		persons.add(oliver);
+
+		Person Peter = new Person("Peter", "Peterweg 14, 3021 Bern", true,
+				false);
+		persons.add(Peter);
 
 		return persons;
 	}
