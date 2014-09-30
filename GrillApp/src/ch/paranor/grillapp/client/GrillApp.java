@@ -12,11 +12,13 @@ import ch.paranor.grillapp.shared.model.Anlass;
 import ch.paranor.grillapp.shared.model.Email;
 import ch.paranor.grillapp.shared.model.Person;
 
+import com.google.gwt.cell.client.FieldUpdater;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.TextColumn;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -167,6 +169,9 @@ public class GrillApp implements EntryPoint {
 		// TODO Anlass Table
 		final CellTable<Anlass> anlassTable = new CellTable<Anlass>();
 
+		addButtonColumn(anlassTable, "Teilnehmer", "Anmelden");
+		addButtonColumn(anlassTable, "Organisator", "Bearbeiten");
+
 		TextColumn<Anlass> titelColumn = new TextColumn<Anlass>() {
 
 			@Override
@@ -249,6 +254,26 @@ public class GrillApp implements EntryPoint {
 			}
 		});
 
+	}
+
+	private void addButtonColumn(final CellTable<Anlass> anlassTable,
+			String columnHeader, final String buttonLabel) {
+		ButtonColumn<Anlass> bearbeitenColumn = new ButtonColumn<Anlass>() {
+
+			@Override
+			public String getValue(Anlass anlass) {
+				// only set sensitive if user is the organizer
+				return buttonLabel;
+			}
+		};
+		anlassTable.addColumn(bearbeitenColumn, columnHeader);
+
+		bearbeitenColumn.setFieldUpdater(new FieldUpdater<Anlass, String>() {
+			@Override
+			public void update(int index, Anlass object, String value) {
+				Window.alert("You clicked " + object.getTitel());
+			}
+		});
 	}
 
 	static String toJaNein(boolean value) {
