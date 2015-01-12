@@ -7,19 +7,30 @@ public class Person implements Serializable {
 
 	String name;
 	String adresse;
+	String passwort;
 	boolean anwesend; // false or true
-	boolean admin; // false 
-	
+	boolean admin; // false
 
-	// Important: there must be a zero-arg constructor and setters and getter for all attributes for the serialization to work!
+	// Important: there must be a zero-arg constructor and setters and getter
+	// for all attributes for the serialization to work!
 	public Person() {
 	}
 
-	public Person(String name, String adresse, Boolean anwesend, Boolean admin) {
+	public Person(String name, String passwort, String adresse, Boolean anwesend, Boolean admin) {
 		this.name = name;
 		this.adresse = adresse;
+		this.passwort = passwort;
 		this.anwesend = anwesend;
 		this.admin = admin;
+
+	}
+
+	public String getPasswort() {
+		return passwort;
+	}
+
+	public void setPasswort(String passwort) {
+		this.passwort = passwort;
 	}
 
 	public String getName() {

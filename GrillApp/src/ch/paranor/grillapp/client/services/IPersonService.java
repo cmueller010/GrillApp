@@ -1,6 +1,6 @@
 package ch.paranor.grillapp.client.services;
 
-import java.util.List;
+import java.util.Collection;
 
 import ch.paranor.grillapp.shared.model.Person;
 
@@ -14,6 +14,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 public interface IPersonService extends RemoteService {
 
 	/** Returns all persons. */
-	public List<Person> getPersons();
+	public Collection<Person> getPersons();
 
+	Person personPruefen(String name, String passwort);
 }

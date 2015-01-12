@@ -1,11 +1,12 @@
 package ch.paranor.grillapp.server.services;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.Map;
 
 import ch.paranor.grillapp.client.services.IPersonService;
 import ch.paranor.grillapp.shared.model.Person;
 
-import com.google.gwt.thirdparty.guava.common.collect.Lists;
+import com.google.gwt.thirdparty.guava.common.collect.Maps;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
@@ -13,25 +14,31 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
  * must be registered in web.xml
  */
 @SuppressWarnings("serial")
-public class PersonService extends RemoteServiceServlet implements
-		IPersonService {
+public class PersonService extends RemoteServiceServlet implements IPersonService {
+
+	Map<String, Person> persons = Maps.newHashMap();
+
+	public PersonService() {
+		persons.put("Neshi", new Person("Neshi", "1234", "Musterweg", true, true));
+		persons.put("Peter", new Person("Peter", "12345", "Peterweg 14, 3021 Bern", true, false));
+	}
 
 	@Override
-	public List<Person> getPersons() {
-		List<Person> persons = Lists.newArrayList();
+	public Collection<Person> getPersons() {
 
-		Person neshi = new Person("Neshi", "Musterweg", true, true);
-		persons.add(neshi);
+		return persons.values();
+	}
 
-		Person oliver = new Person("Oliver", "Hardeggerstrasse 12, 3008 Bern",
-				true, false);
-		persons.add(oliver);
+	@Override
+	public Person personPruefen(String name, String passwort) {
 
-		Person Peter = new Person("Peter", "Peterweg 14, 3021 Bern", true,
-				false);
-		persons.add(Peter);
+		Person person = persons.get(name);
+		if (person.getPasswort().equals(passwort)) {
+			return person;
+		} else {
+			return null;
+		}
 
-		return persons;
 	}
 
 }
