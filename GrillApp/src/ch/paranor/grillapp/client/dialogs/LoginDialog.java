@@ -1,5 +1,6 @@
 package ch.paranor.grillapp.client.dialogs;
 
+import ch.paranor.grillapp.client.events.LoginEvent;
 import ch.paranor.grillapp.client.services.IPersonService;
 import ch.paranor.grillapp.client.services.IPersonServiceAsync;
 import ch.paranor.grillapp.shared.model.Person;
@@ -12,13 +13,13 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
-public class LoginDialog extends Composite implements HasText {
+public class LoginDialog extends DialogBox implements HasText {
 
 	private static LoginDialogUiBinder uiBinder = GWT.create(LoginDialogUiBinder.class);
 
@@ -26,7 +27,7 @@ public class LoginDialog extends Composite implements HasText {
 	}
 
 	public LoginDialog() {
-		initWidget(uiBinder.createAndBindUi(this));
+		setWidget(uiBinder.createAndBindUi(this));
 	}
 
 	/*---------------UiField wird initialisiert aus dem ui.xml---------------*/
@@ -36,6 +37,8 @@ public class LoginDialog extends Composite implements HasText {
 	PasswordTextBox passwort;
 	@UiField
 	Button anmeldenButton;
+	@UiField
+	DialogBox dialogBox;
 
 	private final IPersonServiceAsync personService = GWT.create(IPersonService.class);
 
@@ -56,10 +59,8 @@ public class LoginDialog extends Composite implements HasText {
 				if (result == null) {
 					Window.alert("Login nicht korrekt!");
 				} else {
+					fireEvent(new LoginEvent());
 
-					System.out.println("logged in");
-
-					// TODO fire Event
 				}
 
 			}
@@ -74,6 +75,11 @@ public class LoginDialog extends Composite implements HasText {
 	}
 
 	/*-----------Getter und Setter werden implementiert aus benutzername, passwort und anmeldenButton-------------*/
+
+	public DialogBox getDialogBox() {
+		return dialogBox;
+	}
+
 	public String getBenutzername() {
 		return benutzername.getValue();
 	}
