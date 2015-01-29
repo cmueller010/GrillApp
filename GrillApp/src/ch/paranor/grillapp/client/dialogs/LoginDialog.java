@@ -14,6 +14,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.TextBox;
@@ -28,6 +29,7 @@ public class LoginDialog extends DialogBox implements HasText {
 
 	public LoginDialog() {
 		setWidget(uiBinder.createAndBindUi(this));
+		setPixelSize(900, 500);
 	}
 
 	/*---------------UiField wird initialisiert aus dem ui.xml---------------*/
@@ -38,7 +40,7 @@ public class LoginDialog extends DialogBox implements HasText {
 	@UiField
 	Button anmeldenButton;
 	@UiField
-	DialogBox dialogBox;
+	FlowPanel loginflowpanel;
 
 	private final IPersonServiceAsync personService = GWT.create(IPersonService.class);
 
@@ -76,8 +78,8 @@ public class LoginDialog extends DialogBox implements HasText {
 
 	/*-----------Getter und Setter werden implementiert aus benutzername, passwort und anmeldenButton-------------*/
 
-	public DialogBox getDialogBox() {
-		return dialogBox;
+	public FlowPanel getDialogBox() {
+		return loginflowpanel;
 	}
 
 	public String getBenutzername() {

@@ -2,14 +2,26 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
 	<ui:style>
-	.pretty {
+	
+	.table {
 		border: 1px solid black;
+		border-color: green;
+
+		margin-top: 20%;
+		
+		
 	}
+	
+
 	</ui:style>
 
-	<g:DialogBox ui:field="dialogBox">
+
+
+	<g:FlowPanel ui:field="loginflowpanel">
+
 		<g:HTMLPanel>
-			<Table class='{style.pretty}'>
+
+			<Table  class='{style.table}'>
 				<tr>
 					<td>
 						<Label>Benutzername: </Label>
@@ -34,6 +46,7 @@
 					</td>
 				</tr>
 			</Table>
+		
 		</g:HTMLPanel>
-	</g:DialogBox>
+	</g:FlowPanel>
 </ui:UiBinder> 
