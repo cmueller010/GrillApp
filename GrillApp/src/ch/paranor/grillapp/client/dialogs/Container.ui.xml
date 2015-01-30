@@ -3,14 +3,44 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
 	<ui:style>
 	.northPanel {
-		background-color: #39F;
+		background-color: blue;
+	}
+	
+	.centerPanel {
+		background-color: red;
+	}
+	
+	.westPanel {
+		background-color: green;
+	}
+	
+	.southPanel {
+		background-color: maroon;
 	}
 	</ui:style>
- <g:DockLayoutPanel unit='EM' styleName="{style.northPanel}">
-   <g:north size='5' >
-     <g:Label>Top</g:Label>
-   </g:north>
-   
- </g:DockLayoutPanel>
+
+	<g:DockLayoutPanel unit='EM'>
+		<g:north size='5'>
+			<g:HeaderPanel styleName="{style.northPanel}"  ui:field="panel">
+				<g:Label>Top</g:Label>
+			</g:HeaderPanel>
+		</g:north>
+
+		<g:center size='5'>
+		<g:HeaderPanel  styleName="{style.centerPanel}" ui:field="centerpanel">
+		<g:Label>Center</g:Label>
+		</g:HeaderPanel>
+			
+		</g:center>
+
+		<g:south size='5'>
+			<g:Label styleName="{style.southPanel}">South</g:Label>
+		</g:south>
+		
+		<g:west size='20'>
+			<g:Label styleName="{style.westPanel}">West</g:Label>
+		</g:west>
+
+	</g:DockLayoutPanel>
 
 </ui:UiBinder> 

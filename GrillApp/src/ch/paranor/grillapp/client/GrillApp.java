@@ -7,7 +7,7 @@ import ch.paranor.grillapp.client.events.ILoginEventHandler;
 import ch.paranor.grillapp.client.events.LoginEvent;
 
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.RootLayoutPanel;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -33,17 +33,17 @@ public class GrillApp implements EntryPoint, ILoginEventHandler {
 
 	public void onModuleLoad() {
 
-		RootPanel.get().add(maincontainer);
-		// loginDialog.addHandler(this, LoginEvent.TYPE);
+		RootLayoutPanel.get().add(maincontainer);
+		maincontainer.getCenterpanel().add(loginDialog);
+		loginDialog.addHandler(this, LoginEvent.TYPE);
 		// loginDialog.show();
-
 	}
 
 	@Override
 	public void login(LoginEvent event) {
 		// TODO Person speichern
-		// String loginName = loginDialog.getBenutzername();
-		// loginDialog.hide();
+		String loginName = loginDialog.getBenutzername();
+		loginDialog.hide();
 
 		// mainContainer.getNorthpanel();
 		// TODO neue Seite laden
