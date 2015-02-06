@@ -4,30 +4,30 @@
 	<ui:style>
 	.table {
 		border: 1px solid black;
-		margin-left:35%;
-		margin-top:5%;
-	
-	
+		margin-left: 35%;
+		margin-top: 5%;
 	}
+	
+
 	</ui:style>
 
 	<g:HTMLPanel>
 
-	<Table class='{style.table}'>
+			<Table class='{style.table}'>
 				<tr>
 					<th>
 						<g:Label>Aktion</g:Label>
 					</th>
-						<th>
+					<th>
 						<g:Label>Titel</g:Label>
 					</th>
 					<th>
 						<g:Label>findet statt am</g:Label>
 					</th>
-						<th>
+					<th>
 						<g:Label>Anmeldung bis</g:Label>
 					</th>
-						<th>
+					<th>
 						<g:Label>Status</g:Label>
 					</th>
 				</tr>
@@ -38,18 +38,19 @@
 					<td>
 						<g:Label ui:field="anlassTitel"></g:Label>
 					</td>
-						<td>
+					<td>
 						<g:Label ui:field="anlassFindetStatt">2. Februar 2015</g:Label>
 					</td>
-						<td>
+					<td>
 						<g:Label ui:field="anlassAnmeldung">26. Januar 2015</g:Label>
 					</td>
-						<td>
+					<td>
 						<g:Label ui:field="anlassStatus">Offen</g:Label>
 					</td>
 				</tr>
-				
+
 			</Table>
+			<g:Button ui:field="organisierenButton">Anlass Organisieren</g:Button>
 		
 	</g:HTMLPanel>
 

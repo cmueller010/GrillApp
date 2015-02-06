@@ -2,51 +2,40 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
 	<ui:style>
-	
-	.table {
-		border: 1px solid black;
-		border-color: green;
-
-		margin-top: 20%;
-		
-		
+	.important {
+		font-weight: bold;
 	}
-	
-
 	</ui:style>
+	<g:HTMLPanel>
+
+		<Label>Login to Grillapp </Label>
+		<Table>
+			<tr>
+				<td>
+					<Label>Benutzername: </Label>
+				</td>
+				<td>
+					<g:TextBox ui:field="benutzername"></g:TextBox>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<Label>Passwort: </Label>
+				</td>
+				<td>
+					<g:PasswordTextBox ui:field="passwort"></g:PasswordTextBox>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<g:Button text="Anmelden" ui:field="anmeldenButton"></g:Button>
+				</td>
+			</tr>
+		</Table>
 
 
 
-	<g:FlowPanel ui:field="loginflowpanel">
-
-		<g:HTMLPanel>
-
-			<Table  class='{style.table}'>
-				<tr>
-					<td>
-						<Label>Benutzername: </Label>
-					</td>
-					<td>
-						<g:TextBox ui:field="benutzername"></g:TextBox>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<Label>Passwort: </Label>
-					</td>
-					<td>
-						<g:PasswordTextBox ui:field="passwort"></g:PasswordTextBox>
-					</td>
-				</tr>
-				<tr>
-					<td>
-					</td>
-					<td>
-						<g:Button text="Anmelden" ui:field="anmeldenButton"></g:Button>
-					</td>
-				</tr>
-			</Table>
-		
-		</g:HTMLPanel>
-	</g:FlowPanel>
+	</g:HTMLPanel>
 </ui:UiBinder> 

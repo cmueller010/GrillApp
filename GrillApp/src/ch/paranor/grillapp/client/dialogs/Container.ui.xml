@@ -4,10 +4,17 @@
 	<ui:style>
 	.northPanel {
 		background-color: blue;
+		text-align: center;
+		font-size: 40px;
+		line-height: 2;
+		font-family: "Copperplate Gothic Bold",serif;
+		font-style: oblique;
+		
 	}
 	
 	.centerPanel {
 		background-color: red;
+		
 	}
 	
 	.westPanel {
@@ -16,13 +23,16 @@
 	
 	.southPanel {
 		background-color: maroon;
+		text-align: center;
+		font-size: 14px;
+		line-height: 4;
 	}
 	</ui:style>
 
 	<g:DockLayoutPanel unit='EM'>
-		<g:north size='5'>
+		<g:north size='7'>
 			<g:HeaderPanel styleName="{style.northPanel}"  ui:field="panel">
-				<g:Label>Top</g:Label>
+				<g:Label>Welcome to Paranor Grillapp</g:Label>
 			</g:HeaderPanel>
 		</g:north>
 
@@ -34,11 +44,13 @@
 		</g:center>
 
 		<g:south size='5'>
-			<g:Label styleName="{style.southPanel}">South</g:Label>
+			<g:Label styleName="{style.southPanel}">Neshanthan Nelson</g:Label>
 		</g:south>
 		
 		<g:west size='20'>
-			<g:Label styleName="{style.westPanel}">West</g:Label>
+			<g:HeaderPanel  styleName="{style.westPanel}" ui:field="westpanel">
+			<g:Label>West</g:Label>
+				</g:HeaderPanel>
 		</g:west>
 
 	</g:DockLayoutPanel>

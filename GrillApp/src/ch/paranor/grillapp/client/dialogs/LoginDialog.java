@@ -13,34 +13,28 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.DialogBox;
-import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
-import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
-public class LoginDialog extends DialogBox implements HasText {
+public class LoginDialog extends Composite implements HasText {
 
-	private static LoginDialogUiBinder uiBinder = GWT.create(LoginDialogUiBinder.class);
+	private static LogUiBinder uiBinder = GWT.create(LogUiBinder.class);
 
-	interface LoginDialogUiBinder extends UiBinder<Widget, LoginDialog> {
+	interface LogUiBinder extends UiBinder<Widget, LoginDialog> {
 	}
 
 	public LoginDialog() {
-		setWidget(uiBinder.createAndBindUi(this));
-		setPixelSize(900, 500);
+		initWidget(uiBinder.createAndBindUi(this));
 	}
 
-	/*---------------UiField wird initialisiert aus dem ui.xml---------------*/
 	@UiField
 	TextBox benutzername;
 	@UiField
-	PasswordTextBox passwort;
+	TextBox passwort;
 	@UiField
 	Button anmeldenButton;
-	@UiField
-	FlowPanel loginflowpanel;
 
 	private final IPersonServiceAsync personService = GWT.create(IPersonService.class);
 
@@ -74,12 +68,6 @@ public class LoginDialog extends DialogBox implements HasText {
 			}
 		});
 
-	}
-
-	/*-----------Getter und Setter werden implementiert aus benutzername, passwort und anmeldenButton-------------*/
-
-	public FlowPanel getDialogBox() {
-		return loginflowpanel;
 	}
 
 	public String getBenutzername() {
@@ -117,5 +105,4 @@ public class LoginDialog extends DialogBox implements HasText {
 		// TODO Auto-generated method stub
 
 	}
-
 }

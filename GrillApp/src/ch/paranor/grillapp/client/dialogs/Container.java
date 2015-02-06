@@ -24,6 +24,17 @@ public class Container extends Composite {
 	@UiField
 	HeaderPanel centerpanel;
 
+	@UiField
+	HeaderPanel westpanel;
+
+	public HeaderPanel getWestpanel() {
+		return westpanel;
+	}
+
+	public void setWestpanel(HeaderPanel westpanel) {
+		this.westpanel = westpanel;
+	}
+
 	public HeaderPanel getCenterpanel() {
 		return centerpanel;
 	}

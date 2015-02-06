@@ -3,6 +3,7 @@ package ch.paranor.grillapp.client;
 import ch.paranor.grillapp.client.dialogs.AnlassDialog;
 import ch.paranor.grillapp.client.dialogs.Container;
 import ch.paranor.grillapp.client.dialogs.LoginDialog;
+import ch.paranor.grillapp.client.dialogs.NavigationDialog;
 import ch.paranor.grillapp.client.events.ILoginEventHandler;
 import ch.paranor.grillapp.client.events.LoginEvent;
 
@@ -21,9 +22,11 @@ public class GrillApp implements EntryPoint, ILoginEventHandler {
 	// "attempting to contact the server. Please check your network "
 	// + "connection and try again: ";
 
-	LoginDialog loginDialog = new LoginDialog();
+	// LoginDialog loginDialog = new LoginDialog();
+	LoginDialog log = new LoginDialog();
 	AnlassDialog anlassDialog = new AnlassDialog();
 	Container maincontainer = new Container();
+	NavigationDialog navigationDialog = new NavigationDialog();
 
 	// MainContainer mainContainer = new MainContainer();
 
@@ -34,18 +37,24 @@ public class GrillApp implements EntryPoint, ILoginEventHandler {
 	public void onModuleLoad() {
 
 		RootLayoutPanel.get().add(maincontainer);
-		maincontainer.getCenterpanel().add(loginDialog);
-		loginDialog.addHandler(this, LoginEvent.TYPE);
+		maincontainer.getCenterpanel().add(log);
+		log.addHandler(this, LoginEvent.TYPE);
+
 		// loginDialog.show();
 	}
 
 	@Override
 	public void login(LoginEvent event) {
 		// TODO Person speichern
-		String loginName = loginDialog.getBenutzername();
-		loginDialog.hide();
+		// String loginName = loginDialog.getBenutzername();
+		maincontainer.getCenterpanel().clear();
+		maincontainer.getCenterpanel().add(anlassDialog);
+		maincontainer.getWestpanel().add(navigationDialog);
+
+		// loginDialog.hide();
 
 		// mainContainer.getNorthpanel();
 		// TODO neue Seite laden
 	}
+
 }

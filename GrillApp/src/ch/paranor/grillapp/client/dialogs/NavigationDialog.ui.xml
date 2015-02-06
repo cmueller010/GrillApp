@@ -1,0 +1,42 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+	.important {
+		font-weight: bold;
+	}
+	
+	input[type="range"] {
+		position: absolute;
+		-webkit-transform: rotate(90deg);
+	}
+	</ui:style>
+
+	<g:HTMLPanel>
+
+
+
+
+		<table border="1">
+			<tr>
+
+			</tr>
+			<tr>
+				<td>
+					<input type="range"></input>
+				</td>
+					<td>
+					
+				</td>
+				<td colspan="6">
+					Anlass
+				</td>
+			</tr>
+		</table>
+
+
+
+
+
+	</g:HTMLPanel>
+</ui:UiBinder> 
