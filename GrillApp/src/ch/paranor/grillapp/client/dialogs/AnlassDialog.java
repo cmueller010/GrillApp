@@ -4,11 +4,8 @@ import ch.paranor.grillapp.client.services.IAnlassService;
 import ch.paranor.grillapp.client.services.IAnlassServiceAsync;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
@@ -69,10 +66,8 @@ public class AnlassDialog extends Composite implements HasText {
 		this.organisierenButton = organisierenButton;
 	}
 
-	@UiHandler("organisierenButton")
-	public void anlassOrganisieren(ClickEvent click) {
+	// @UiHandler("organisierenButton")
+	// public void anlassOrganisieren(ClickEvent click) {
 
-		Window.alert("hallo");
-	}
-
+	// }
 }

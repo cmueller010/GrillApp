@@ -31,16 +31,21 @@
 	<g:DockLayoutPanel unit='EM'>
 		<g:north size='7'>
 			<g:HeaderPanel styleName="{style.northPanel}" ui:field="panel">
-				<g:Label>Welcome to Paranor Grillapp</g:Label>
+				<g:Label>Paranor Grillapp</g:Label>
 			</g:HeaderPanel>
 		</g:north>
 
 		<g:center size='5'>
 			<g:HeaderPanel styleName="{style.centerPanel}"
 				ui:field="centerpanel">
+				
 			</g:HeaderPanel>
 
 		</g:center>
+
+		<g:west size='20'>
+			<g:Label styleName="{style.westPanel}">Neshanthan Nelson</g:Label>
+		</g:west>
 
 		<g:south size='5'>
 			<g:Label styleName="{style.southPanel}">Neshanthan Nelson</g:Label>

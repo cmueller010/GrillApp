@@ -14,11 +14,10 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
-public class LoginDialog extends Composite implements HasText {
+public class LoginDialog extends Composite {
 
 	private static LogUiBinder uiBinder = GWT.create(LogUiBinder.class);
 
@@ -94,15 +93,4 @@ public class LoginDialog extends Composite implements HasText {
 		this.anmeldenButton = anmeldenButton;
 	}
 
-	@Override
-	public String getText() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setText(String text) {
-		// TODO Auto-generated method stub
-
-	}
 }

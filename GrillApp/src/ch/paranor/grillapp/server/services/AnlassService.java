@@ -13,8 +13,7 @@ import ch.paranor.grillapp.shared.model.Status;
 import com.google.appengine.labs.repackaged.com.google.common.collect.Lists;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
-public class AnlassService extends RemoteServiceServlet implements
-		IAnlassService {
+public class AnlassService extends RemoteServiceServlet implements IAnlassService {
 
 	@Override
 	public List<Anlass> getAnlaesse() {
@@ -35,8 +34,7 @@ public class AnlassService extends RemoteServiceServlet implements
 		organisator.setAdmin(true);
 		organisator.setAnwesend(true);
 
-		Anlass paranor = new Anlass(datumZeit, "Paranor", "Test", anmeldenBis,
-				AnlassTyp.FREIE_WAHL, Status.NEU, organisator);
+		Anlass paranor = new Anlass(datumZeit, "Paranor", "Test", anmeldenBis, AnlassTyp.FREIE_WAHL, Status.NEU, organisator);
 
 		anlassListe.add(paranor);
 		return anlassListe;

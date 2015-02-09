@@ -7,14 +7,14 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HeaderPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public class Container extends Composite {
+public class MainContainer extends Composite {
 
 	private static ContainerUiBinder uiBinder = GWT.create(ContainerUiBinder.class);
 
-	interface ContainerUiBinder extends UiBinder<Widget, Container> {
+	interface ContainerUiBinder extends UiBinder<Widget, MainContainer> {
 	}
 
-	public Container() {
+	public MainContainer() {
 		initWidget(uiBinder.createAndBindUi(this));
 
 	}

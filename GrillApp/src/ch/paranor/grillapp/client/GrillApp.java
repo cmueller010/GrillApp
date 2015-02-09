@@ -3,6 +3,7 @@ package ch.paranor.grillapp.client;
 import ch.paranor.grillapp.client.dialogs.AnlassDialog;
 import ch.paranor.grillapp.client.dialogs.Container;
 import ch.paranor.grillapp.client.dialogs.LoginDialog;
+import ch.paranor.grillapp.client.dialogs.MainContainer;
 import ch.paranor.grillapp.client.dialogs.NavigationDialog;
 import ch.paranor.grillapp.client.events.ILoginEventHandler;
 import ch.paranor.grillapp.client.events.LoginEvent;
@@ -25,7 +26,8 @@ public class GrillApp implements EntryPoint, ILoginEventHandler {
 	// LoginDialog loginDialog = new LoginDialog();
 	LoginDialog log = new LoginDialog();
 	AnlassDialog anlassDialog = new AnlassDialog();
-	Container maincontainer = new Container();
+	Container container = new Container();
+	MainContainer maincontainer = new MainContainer();
 	NavigationDialog navigationDialog = new NavigationDialog();
 
 	// MainContainer mainContainer = new MainContainer();
@@ -36,8 +38,8 @@ public class GrillApp implements EntryPoint, ILoginEventHandler {
 
 	public void onModuleLoad() {
 
-		RootLayoutPanel.get().add(maincontainer);
-		maincontainer.getCenterpanel().add(log);
+		RootLayoutPanel.get().add(container);
+		container.getCenterpanel().add(log);
 		log.addHandler(this, LoginEvent.TYPE);
 
 		// loginDialog.show();
@@ -47,14 +49,16 @@ public class GrillApp implements EntryPoint, ILoginEventHandler {
 	public void login(LoginEvent event) {
 		// TODO Person speichern
 		// String loginName = loginDialog.getBenutzername();
-		maincontainer.getCenterpanel().clear();
+		container.getCenterpanel().clear();
+		RootLayoutPanel.get().clear();
+		RootLayoutPanel.get().add(maincontainer);
+
 		maincontainer.getCenterpanel().add(anlassDialog);
-		maincontainer.getWestpanel().add(navigationDialog);
+		// maincontainer.getWestpanel().add(navigationDialog);
 
 		// loginDialog.hide();
 
 		// mainContainer.getNorthpanel();
 		// TODO neue Seite laden
 	}
-
 }
