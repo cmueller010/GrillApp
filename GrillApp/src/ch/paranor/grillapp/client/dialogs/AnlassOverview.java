@@ -15,15 +15,15 @@ import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 
-public class AnlassDialog extends Composite implements HasText {
+public class AnlassOverview extends Composite implements HasText {
 
 	private static HomeDialogUiBinder uiBinder = GWT.create(HomeDialogUiBinder.class);
 	private final IAnlassServiceAsync anlassService = GWT.create(IAnlassService.class);
 
-	interface HomeDialogUiBinder extends UiBinder<Widget, AnlassDialog> {
+	interface HomeDialogUiBinder extends UiBinder<Widget, AnlassOverview> {
 	}
 
-	public AnlassDialog() {
+	public AnlassOverview() {
 		initWidget(uiBinder.createAndBindUi(this));
 
 	}

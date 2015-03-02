@@ -19,7 +19,7 @@ public class MainContainer extends Composite {
 
 	}
 
-	AnlassDialog anlassDialog;
+	AnlassOverview anlassDialog;
 
 	@UiField
 	HeaderPanel panel;
