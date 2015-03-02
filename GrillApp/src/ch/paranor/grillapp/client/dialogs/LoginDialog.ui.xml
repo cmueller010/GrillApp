@@ -63,7 +63,7 @@
 					</td>
 					<td>
 						<g:TextBox styleName='{style.benutzernameTextBox}'
-							ui:field="benutzername"></g:TextBox>
+							ui:field="benutzernametextbox"></g:TextBox>
 					</td>
 				</tr>
 				<tr>
@@ -72,7 +72,7 @@
 					</td>
 					<td>
 						<g:PasswordTextBox styleName='{style.passwortTextBox}'
-							ui:field="passwort"></g:PasswordTextBox>
+							ui:field="passworttextbox"></g:PasswordTextBox>
 					</td>
 				</tr>
 				<tr>

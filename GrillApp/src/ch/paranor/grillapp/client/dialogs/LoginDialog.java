@@ -29,9 +29,9 @@ public class LoginDialog extends Composite {
 	}
 
 	@UiField
-	TextBox benutzername;
+	TextBox benutzernametextbox;
 	@UiField
-	TextBox passwort;
+	TextBox passworttextbox;
 	@UiField
 	Button anmeldenButton;
 
@@ -70,19 +70,19 @@ public class LoginDialog extends Composite {
 	}
 
 	public String getBenutzername() {
-		return benutzername.getValue();
+		return benutzernametextbox.getValue();
 	}
 
 	public void setBenutzername(String benutzername) {
-		this.benutzername.setValue(benutzername);
+		this.benutzernametextbox.setValue(benutzername);
 	}
 
 	public String getPasswort() {
-		return passwort.getValue();
+		return passworttextbox.getValue();
 	}
 
 	public void setPasswort(String passwort) {
-		this.passwort.setValue(passwort);
+		this.passworttextbox.setValue(passwort);
 	}
 
 	public Button getAnmeldenButton() {

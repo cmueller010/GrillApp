@@ -8,50 +8,54 @@
 		margin-top: 5%;
 	}
 	
-
+	.centerPanel {
+		background-color: #FFF8DC;
+	}
 	</ui:style>
 
 	<g:HTMLPanel>
 
-			<Table class='{style.table}'>
-				<tr>
-					<th>
-						<g:Label>Aktion</g:Label>
-					</th>
-					<th>
-						<g:Label>Titel</g:Label>
-					</th>
-					<th>
-						<g:Label>findet statt am</g:Label>
-					</th>
-					<th>
-						<g:Label>Anmeldung bis</g:Label>
-					</th>
-					<th>
-						<g:Label>Status</g:Label>
-					</th>
-				</tr>
-				<tr>
-					<td>
-						<g:Label ui:field="anlassAction">Anmelden | Abmelden | Bearbeiten </g:Label>
-					</td>
-					<td>
-						<g:Label ui:field="anlassTitel"></g:Label>
-					</td>
-					<td>
-						<g:Label ui:field="anlassFindetStatt">2. Februar 2015</g:Label>
-					</td>
-					<td>
-						<g:Label ui:field="anlassAnmeldung">26. Januar 2015</g:Label>
-					</td>
-					<td>
-						<g:Label ui:field="anlassStatus">Offen</g:Label>
-					</td>
-				</tr>
+		<Table class='{style.table}'>
+			<tr>
+				<th>
+					<g:Label>Aktion</g:Label>
+				</th>
+				<th>
+					<g:Label>Titel</g:Label>
+				</th>
+				<th>
+					<g:Label>findet statt am</g:Label>
+				</th>
+				<th>
+					<g:Label>Anmeldung bis</g:Label>
+				</th>
+				<th>
+					<g:Label>Status</g:Label>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<g:Label ui:field="anlassAction">Anmelden | Abmelden | Bearbeiten </g:Label>
+				</td>
+				<td>
+					<g:Label ui:field="anlassTitel"></g:Label>
+				</td>
+				<td>
+					<g:Label ui:field="anlassFindetStatt">2. Februar 2015</g:Label>
+				</td>
+				<td>
+					<g:Label ui:field="anlassAnmeldung">26. Januar 2015</g:Label>
+				</td>
+				<td>
+					<g:Label ui:field="anlassStatus">Offen</g:Label>
+				</td>
+			</tr>
 
-			</Table>
-			<g:Button ui:field="organisierenButton">Anlass Organisieren</g:Button>
-		
+		</Table>
+
+		<g:Button ui:field="organisierenButton">Anlass Organisieren</g:Button>
+
+
 	</g:HTMLPanel>
 
 </ui:UiBinder> 
