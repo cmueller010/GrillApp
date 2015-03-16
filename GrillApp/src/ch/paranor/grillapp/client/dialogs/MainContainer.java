@@ -22,10 +22,21 @@ public class MainContainer extends Composite {
 	AnlassOverview anlassOverview;
 
 	@UiField
-	HeaderPanel panel;
+	HeaderPanel northPanel;
 
 	@UiField
 	HeaderPanel centerpanel;
+
+	@UiField
+	HeaderPanel westpanel;
+
+	public HeaderPanel getWestpanel() {
+		return westpanel;
+	}
+
+	public void setWestpanel(HeaderPanel westpanel) {
+		this.westpanel = westpanel;
+	}
 
 	public HeaderPanel getCenterpanel() {
 		return centerpanel;
@@ -36,11 +47,11 @@ public class MainContainer extends Composite {
 	}
 
 	public HeaderPanel getPanel() {
-		return panel;
+		return northPanel;
 	}
 
 	public void setPanel(HeaderPanel panel) {
-		this.panel = panel;
+		this.northPanel = panel;
 	}
 
 }

@@ -18,6 +18,7 @@ public class GrillApp implements EntryPoint, ILoginEventHandler {
 	LoginDialog loginDialog = new LoginDialog();
 	AnlassOverview anlassDialog = new AnlassOverview();
 	Container container = new Container();
+
 	MainContainer maincontainer = new MainContainer();
 
 	/**
@@ -26,8 +27,10 @@ public class GrillApp implements EntryPoint, ILoginEventHandler {
 
 	public void onModuleLoad() {
 
-		RootLayoutPanel.get().add(container);
-		container.getCenterpanel().add(loginDialog);
+		RootLayoutPanel.get().add(maincontainer);
+		maincontainer.getWestpanel().setVisible(false);
+
+		maincontainer.getCenterpanel().add(loginDialog);
 		loginDialog.addHandler(this, LoginEvent.TYPE);
 
 	}
@@ -36,9 +39,10 @@ public class GrillApp implements EntryPoint, ILoginEventHandler {
 	public void login(LoginEvent event) {
 		// TODO Person speichern
 
-		container.getCenterpanel().clear();
-		RootLayoutPanel.get().clear();
-		RootLayoutPanel.get().add(maincontainer);
+		maincontainer.getCenterpanel().clear();
+		maincontainer.getWestpanel().setVisible(true);
+		// RootLayoutPanel.get().clear();
+		// RootLayoutPanel.get().add(maincontainer);
 
 		maincontainer.getCenterpanel().add(anlassDialog);
 	}

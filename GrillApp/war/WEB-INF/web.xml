@@ -4,10 +4,33 @@
               http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5" xmlns="http://java.sun.com/xml/ns/javaee">
 
+
+
+
+	<context-param>
+		<param-name>db.url</param-name>
+		<param-value>jdbc:h2:~/DB_Grillapp
+		</param-value>
+	</context-param>
+	<context-param>
+		<param-name>db.user</param-name>
+		<param-value>sa</param-value>
+	</context-param>
+	<context-param>
+		<param-name>db.password</param-name>
+		<param-value></param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.h2.server.web.DbStarter</listener-class>
+
+	</listener>
+
+
 	<!-- Servlets -->
 	<servlet>
 		<servlet-name>personServlet</servlet-name>
-		<servlet-class>ch.paranor.grillapp.server.services.PersonService</servlet-class>
+		<servlet-class>ch.paranor.grillapp.server.services.PersonService
+		</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -17,7 +40,8 @@
 
 	<servlet>
 		<servlet-name>anlassServlet</servlet-name>
-		<servlet-class>ch.paranor.grillapp.server.services.AnlassService</servlet-class>
+		<servlet-class>ch.paranor.grillapp.server.services.AnlassService
+		</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -27,7 +51,8 @@
 
 	<servlet>
 		<servlet-name>emailServlet</servlet-name>
-		<servlet-class>ch.paranor.grillapp.server.services.EmailService</servlet-class>
+		<servlet-class>ch.paranor.grillapp.server.services.EmailService
+		</servlet-class>
 	</servlet>
 
 	<servlet-mapping>

@@ -21,7 +21,7 @@
 	}
 	
 	.southPanel {
-		background-color: #033568;
+		background-color: blue;
 		text-align: center;
 		font-size: 14px;
 		line-height: 4;
@@ -30,7 +30,7 @@
 
 	<g:DockLayoutPanel unit='EM'>
 		<g:north size='7'>
-			<g:HeaderPanel styleName="{style.northPanel}" ui:field="panel">
+			<g:HeaderPanel styleName="{style.northPanel}" ui:field="northPanel">
 				<g:Label>Paranor Grillapp</g:Label>
 			</g:HeaderPanel>
 		</g:north>
@@ -42,14 +42,20 @@
 			</g:HeaderPanel>
 
 		</g:center>
+ 
+	<g:south size='5'>
+			<g:HeaderPanel styleName="{style.southPanel}" ui:field="southPanel">
+				<g:Label>Neshanthan Nelson</g:Label>
+			</g:HeaderPanel>
+		</g:south>
 
 		<g:west size='20'>
-			<g:Label styleName="{style.westPanel}">Neshanthan Nelson</g:Label>
+		<g:HeaderPanel styleName="{style.westPanel}"
+				ui:field="westpanel">
+			</g:HeaderPanel>
 		</g:west>
 
-		<g:south size='5'>
-			<g:Label styleName="{style.southPanel}">Neshanthan Nelson</g:Label>
-		</g:south>
+	
 
 		<!-- <g:west size='20'> <g:HeaderPanel styleName="{style.westPanel}" ui:field="westpanel"> 
 			<g:Label>West</g:Label> </g:HeaderPanel> </g:west> -->
